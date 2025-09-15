@@ -4,15 +4,15 @@ author: "Fenglin Xie"
 date: "2025-09-15"
 output: html_document
 ---
-
-# The introduction of the dataset
+# Problem 1
+## The introduction of the dataset
 ```{r}
 library(moderndive)
 data("early_january_weather")
 ```
 This dataset has `r ncol(early_january_weather)` variables and `r nrow(early_january_weather)` observations, including varibles as follows:`r names(early_january_weather)`. Besides, the mean temperature is `r mean(early_january_weather$temp)`.
 
-# Make a scatterplot
+## Make a scatterplot and the descriptions for the plot
 ```{r}
 library(tidyverse)
 temp_vs_time_plot <- ggplot(early_january_weather, 
@@ -29,7 +29,7 @@ print(temp_vs_time_plot)
 
 From this plot, we can see the two points: first, humidity levels show a relationship with temperature patterns, with higher humidity values often coinciding with periods of elevated temperature. Second, there appears to be a slight overall increase in temperature values from January 7 to January 14
 
-# Export the scatterplot to project directory
+## Export the scatterplot to project directory
 ```{r}
 ggsave("temp_vs_time_plot.png")
 ```

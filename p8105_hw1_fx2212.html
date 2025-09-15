@@ -357,8 +357,10 @@ display: none;
 </div>
 
 
-<div id="the-introduction-of-the-dataset" class="section level1">
-<h1>The introduction of the dataset</h1>
+<div id="problem-1" class="section level1">
+<h1>Problem 1</h1>
+<div id="the-introduction-of-the-dataset" class="section level2">
+<h2>The introduction of the dataset</h2>
 <pre class="r"><code>library(moderndive)
 data(&quot;early_january_weather&quot;)</code></pre>
 <p>This dataset has 15 variables and 358 observations, including
@@ -366,8 +368,8 @@ varibles as follows:origin, year, month, day, hour, temp, dewp, humid,
 wind_dir, wind_speed, wind_gust, precip, pressure, visib, time_hour.
 Besides, the mean temperature is 39.5821229.</p>
 </div>
-<div id="make-a-scatterplot" class="section level1">
-<h1>Make a scatterplot</h1>
+<div id="make-a-scatterplot-and-the-descriptions-for-the-plot" class="section level2">
+<h2>Make a scatterplot and the descriptions for the plot</h2>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -396,10 +398,11 @@ values often coinciding with periods of elevated temperature. Second,
 there appears to be a slight overall increase in temperature values from
 January 7 to January 14</p>
 </div>
-<div id="export-the-scatterplot-to-project-directory" class="section level1">
-<h1>Export the scatterplot to project directory</h1>
+<div id="export-the-scatterplot-to-project-directory" class="section level2">
+<h2>Export the scatterplot to project directory</h2>
 <pre class="r"><code>ggsave(&quot;temp_vs_time_plot.png&quot;)</code></pre>
 <pre><code>## Saving 7 x 5 in image</code></pre>
+</div>
 </div>
 
 
