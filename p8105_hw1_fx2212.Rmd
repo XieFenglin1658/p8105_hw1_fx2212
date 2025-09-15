@@ -27,10 +27,55 @@ temp_vs_time_plot <- ggplot(early_january_weather,
 print(temp_vs_time_plot)
 ```
 
-From this plot, we can see the two points: first, humidity levels show a relationship with temperature patterns, with higher humidity values often coinciding with periods of elevated temperature. Second, there appears to be a slight overall increase in temperature values from January 7 to January 14
+From this plot, we can see the two points: 
++  Humidity levels show a relationship with temperature patterns, with higher humidity values often coinciding with periods of elevated temperature. 
++  There appears to be a slight overall increase in temperature values from January 7 to January 14
 
 ## Export the scatterplot to project directory
 ```{r}
 ggsave("temp_vs_time_plot.png")
 ```
 
+# Problem 2
+## Create a data frame
+```{r}
+set.seed(123)
+
+df <- tibble(
+  norm_samp = rnorm(10, 0, 1),
+  log_vec = norm_samp > 0,
+  char_vec = letters[1:10],
+  fact_vec = factor(rep(c("low", "medium", "high"), length.out = 10))
+)
+
+print(df)
+```
+
+## Calculate means for each variable
+```{r}
+mean_norm <- mean(pull(df, norm_samp))
+mean_logical <- mean(pull(df, log_vec))
+mean_character <- mean(pull(df, char_vec))
+mean_factor <- mean(pull(df, fact_vec))
+```
+
+Only the numeric variable (norm_samp) and logical variable (log_vec) can be used to calculate a mean. The character variable (char_vec) and factor variable (fact_vec) cannot be used to calculate a mean, as attempting to do so would result in an error.
+
+## Apply as.numeric to different variable types
+```{r}
+logical_to_numeric <- as.numeric(pull(df, log_vec))
+character_to_numeric <- as.numeric(pull(df, char_vec))
+factor_to_numeric <- as.numeric(pull(df, fact_vec))
+
+logical_to_numeric 
+character_to_numeric
+factor_to_numeric
+```
+
+When we apply as.numeric() to different variable types:
+
++  The logical vector converts successfully: TRUE becomes 1 and FALSE becomes 0
++  The character vector fails to convert meaningfully, resulting in NA values for all elements
++  The factor vector converts to the underlying integer codes representing the factor levels
+
+This helps explain why we can calculate the mean of the logical vector (as it gets implicitly converted to 1s and 0s) but not the character or factor vectors. R can only calculate means for numeric data or data that can be meaningfully converted to numeric values.
