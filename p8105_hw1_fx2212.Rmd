@@ -28,6 +28,7 @@ print(temp_vs_time_plot)
 ```
 
 From this plot, we can see the two points: 
+
 +  Humidity levels show a relationship with temperature patterns, with higher humidity values often coinciding with periods of elevated temperature. 
 +  There appears to be a slight overall increase in temperature values from January 7 to January 14
 
