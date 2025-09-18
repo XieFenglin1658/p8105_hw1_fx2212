@@ -10,7 +10,17 @@ output: github_document
 library(moderndive)
 data("early_january_weather")
 ```
-This dataset has `r ncol(early_january_weather)` variables and `r nrow(early_january_weather)` observations, including varibles as follows:`r names(early_january_weather)`. Besides, the mean temperature is `r mean(early_january_weather$temp)`.
+This dataset has `r ncol(early_january_weather)` variables and `r nrow(early_january_weather)` observations, including varibles as follows:`r names(early_january_weather)`.
+
+The important variables in this dataset and their values include:
+
+`temp`: Temperature in Fahrenheit, the value range is [`r range(early_january_weather$temp)`] °F with a mean of `r mean(early_january_weather$temp)`°F.
+
+`humid`: Humidity percentage, the value range is [`r range(early_january_weather$humid)`]%.
+
+`time_hour`: DateTime measurements, the value range is [`r range(early_january_weather$time_hour)`].
+
+Besides, the mean temperature is `r mean(early_january_weather$temp)`°F.
 
 ## Make a scatterplot and the descriptions for the plot
 ```{r}
